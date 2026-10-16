@@ -1,0 +1,115 @@
+[
+    {
+        "id": "autocad",
+        "name": "AutoCAD",
+        "vendor": "Autodesk",
+        "category": "2D/3D chizmachilik",
+        "description": "Muhandislik va arxitektura chizmalarini yaratish uchun sanoat standarti. Ortogonal proyeksiyalar, o‘lchamlar va aniq 2D/3D chizish imkonini beradi.",
+        "uses": [
+            "Texnik chizmalar",
+            "Reja va fasadlar",
+            "Detallashtirish",
+            "DWG formatida almashish"
+        ],
+        "level": "Boshlang‘ich — Professional",
+        "resources": [
+            {"title": "Autodesk AutoCAD o‘quv markazi", "url": "https://www.autodesk.com/learn"},
+            {"title": "AutoCAD YouTube rasmiy kanal", "url": "https://www.youtube.com/user/AutoCAD"}
+        ],
+        "icon": "cad"
+    },
+    {
+        "id": "revit",
+        "name": "Revit",
+        "vendor": "Autodesk",
+        "category": "BIM / Arxitektura",
+        "description": "Binolarni axborot modellashtirish (BIM) dasturi. Reja, fasad, kesim va 3D model bir-biriga bog‘langan holda ishlaydi.",
+        "uses": [
+            "Bino modellashtirish",
+            "Reja–fasad–kesim avtomatik bog‘lanishi",
+            "Loyiha hujjatlari",
+            "Konstruksiya va muhandislik tizimlari"
+        ],
+        "level": "O‘rta — Professional",
+        "resources": [
+            {"title": "Revit Learn", "url": "https://www.autodesk.com/products/revit/overview"},
+            {"title": "BIM asoslari", "url": "https://www.autodesk.com/solutions/bim"}
+        ],
+        "icon": "bim"
+    },
+    {
+        "id": "sketchup",
+        "name": "SketchUp",
+        "vendor": "Trimble",
+        "category": "3D modellashtirish",
+        "description": "Tez va intuitiv 3D modellashtirish. Talabalar uchun uy, xona va geometrik jismlarni yaratishni o‘rganishga qulay.",
+        "uses": [
+            "Tezkor 3D eskizlar",
+            "Interer va eksterier",
+            "Geometrik jismlar",
+            "Vizualizatsiya"
+        ],
+        "level": "Boshlang‘ich",
+        "resources": [
+            {"title": "SketchUp Free", "url": "https://www.sketchup.com/plans-and-pricing/sketchup-free"},
+            {"title": "SketchUp o‘quv materiallari", "url": "https://learn.sketchup.com/"}
+        ],
+        "icon": "model"
+    },
+    {
+        "id": "blender",
+        "name": "Blender",
+        "vendor": "Blender Foundation",
+        "category": "3D / Vizualizatsiya",
+        "description": "Bepul va ochiq kodli 3D dastur. Modellashtirish, render, animatsiya. GLB/GLTF eksporti Three.js uchun qulay.",
+        "uses": [
+            "3D modellashtirish",
+            "Render va materiallar",
+            "Animatsiya",
+            "GLTF/GLB eksport"
+        ],
+        "level": "Boshlang‘ich — Professional",
+        "resources": [
+            {"title": "Blender rasmiy sayt", "url": "https://www.blender.org/"},
+            {"title": "Blender o‘quv darslari", "url": "https://www.blender.org/support/tutorials/"}
+        ],
+        "icon": "render"
+    },
+    {
+        "id": "solidworks",
+        "name": "SolidWorks",
+        "vendor": "Dassault Systèmes",
+        "category": "CAD / Muhandislik",
+        "description": "Parametrik 3D modellashtirish. Detallar, yig‘malar va chizmalar. Geometrik toleranslar va kesimlar bilan ishlash.",
+        "uses": [
+            "Parametik modellashtirish",
+            "Yig‘ma konstruksiyalar",
+            "Texnik chizmalar",
+            "Simulyatsiya"
+        ],
+        "level": "O‘rta — Professional",
+        "resources": [
+            {"title": "SolidWorks o‘quv", "url": "https://www.solidworks.com/support/resource-center"}
+        ],
+        "icon": "cad"
+    },
+    {
+        "id": "freecad",
+        "name": "FreeCAD",
+        "vendor": "FreeCAD jamoasi",
+        "category": "CAD (bepul)",
+        "description": "Bepul parametrik 3D CAD. Talabalar uchun AutoCAD/SolidWorks alternativasi sifatida foydali.",
+        "uses": [
+            "Parametik 3D",
+            "Texnik chizmalar",
+            "Arxitektura asoslari",
+            "O‘quv maqsadlari"
+        ],
+        "level": "Boshlang‘ich — O‘rta",
+        "resources": [
+            {"title": "FreeCAD sayt", "url": "https://www.freecad.org/"},
+            {"title": "Hujjatlar", "url": "https://wiki.freecad.org/"}
+        ],
+        "icon": "cad"
+    }
+]

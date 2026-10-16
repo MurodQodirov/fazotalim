@@ -1,0 +1,80 @@
+[
+    {
+        "id": "cube",
+        "name": "Kub",
+        "name_en": "Cube",
+        "description": "Barcha yoqlari teng kvadratlardan iborat olti yoqli jism. Fazoviy tasavvurni shakllantirish uchun eng asosiy model.",
+        "faces": 6,
+        "edges": 12,
+        "vertices": 8,
+        "formula_volume": "V = a³",
+        "formula_area": "S = 6a²",
+        "theory": "Kub — barcha qirralari teng bo‘lgan to‘g‘ri parallelepiped. Uning proyeksiyalarida front, gorizontal va profil ko‘rinishlar bir xil kvadrat yoki kvadratga yaqin shakl beradi (joylashuvga qarab).",
+        "color": "#c9a227"
+    },
+    {
+        "id": "prism",
+        "name": "Prizma",
+        "name_en": "Prism",
+        "description": "Asoslari parallel va teng ko‘pburchaklardan iborat, yon yoqlari parallelogramm bo‘lgan jism.",
+        "faces": 5,
+        "edges": 9,
+        "vertices": 6,
+        "formula_volume": "V = S_asos × h",
+        "formula_area": "S = 2S_asos + P_asos × h",
+        "theory": "Prizmaning asoslari parallel tekisliklarda yotadi. Uchburchakli prizma chizma geometriyada proyeksiyalarni o‘rganish uchun qulay model hisoblanadi.",
+        "color": "#9a7a14"
+    },
+    {
+        "id": "pyramid",
+        "name": "Piramida",
+        "name_en": "Pyramid",
+        "description": "Asosi ko‘pburchak, yon yoqlari esa bitta uchda tutashuvchi uchburchaklardan iborat jism.",
+        "faces": 5,
+        "edges": 8,
+        "vertices": 5,
+        "formula_volume": "V = (1/3) × S_asos × h",
+        "formula_area": "S = S_asos + S_yon",
+        "theory": "Piramidaning uchi (cho‘qqisi) asos tekisligidan tashqarida joylashadi. Uning proyeksiyalarida cho‘qqi va asos o‘rtasidagi bog‘liqlikni kuzatish muhim.",
+        "color": "#a67c1a"
+    },
+    {
+        "id": "cylinder",
+        "name": "Silindr",
+        "name_en": "Cylinder",
+        "description": "Aylana asosli jism; yon sirt straight generatorlar orqali hosil bo‘ladi.",
+        "faces": 3,
+        "edges": 2,
+        "vertices": 0,
+        "formula_volume": "V = πr²h",
+        "formula_area": "S = 2πr(r + h)",
+        "theory": "Silindrning front proyeksiyasi to‘g‘ri to‘rtburchak, gorizontal proyeksiyasi esa aylana ko‘rinishida bo‘ladi. Bu 2D–3D bog‘liqlikni tushunish uchun klassik misol.",
+        "color": "#c9a227"
+    },
+    {
+        "id": "cone",
+        "name": "Konus",
+        "name_en": "Cone",
+        "description": "Aylana asos va bitta cho‘qqidan iborat jism. Yon sirt generatorlari cho‘qqiga tutashadi.",
+        "faces": 2,
+        "edges": 1,
+        "vertices": 1,
+        "formula_volume": "V = (1/3)πr²h",
+        "formula_area": "S = πr(r + l)",
+        "theory": "Konus proyeksiyalarida front ko‘rinish uchburchak, gorizontal ko‘rinish esa aylana (va uning markazida cho‘qqi proyeksiyasi) shaklida bo‘ladi.",
+        "color": "#9a7a14"
+    },
+    {
+        "id": "sphere",
+        "name": "Shar",
+        "name_en": "Sphere",
+        "description": "Markazdan bir xil masofada joylashgan barcha nuqtalar to‘plami. Barcha proyeksiyalari aylana.",
+        "faces": 1,
+        "edges": 0,
+        "vertices": 0,
+        "formula_volume": "V = (4/3)πr³",
+        "formula_area": "S = 4πr²",
+        "theory": "Shar har qanday tekislikdagi proyeksiyasi aylana bo‘ladi. Bu fazoviy simmetriyani tushunish uchun muhim model.",
+        "color": "#a67c1a"
+    }
+]

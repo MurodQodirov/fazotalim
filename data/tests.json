@@ -1,0 +1,234 @@
+[
+    {
+        "id": "test-pre",
+        "title": "Boshlang‘ich diagnostika testi",
+        "type": "pretest",
+        "description": "Fazoviy tasavvur darajasini aniqlash uchun boshlang‘ich test. Dissertatsiya tadqiqoti uchun muhim.",
+        "topic_id": null,
+        "time_limit": 20,
+        "questions": [
+            {
+                "id": "q1",
+                "text": "Kubning nechta yoqi bor?",
+                "type": "single",
+                "options": ["4", "6", "8", "12"],
+                "correct": 1
+            },
+            {
+                "id": "q2",
+                "text": "Silindrning gorizontal proyeksiyasi odatda qanday shakl?",
+                "type": "single",
+                "options": ["Uchburchak", "To‘g‘ri to‘rtburchak", "Aylana", "Trapetsiya"],
+                "correct": 2
+            },
+            {
+                "id": "q3",
+                "text": "Konusning front proyeksiyasi ko‘pincha qanday ko‘rinadi?",
+                "type": "single",
+                "options": ["Aylana", "Uchburchak", "Kvadrat", "Ellips"],
+                "correct": 1
+            },
+            {
+                "id": "q4",
+                "text": "Nuqtaning fazodagi holati nechta proyeksiya bilan to‘liq aniqlanadi?",
+                "type": "single",
+                "options": ["1", "2", "3", "4"],
+                "correct": 2
+            },
+            {
+                "id": "q5",
+                "text": "Piramida va prizma o‘rtasidagi asosiy farq nima?",
+                "type": "single",
+                "options": [
+                    "Prizmaning yon qirralari parallel, piramidada ular bitta uchda tutashadi",
+                    "Piramidaning asosi doimo kvadrat",
+                    "Prizmaning hajmi doimo katta",
+                    "Farq yo‘q"
+                ],
+                "correct": 0
+            },
+            {
+                "id": "q6",
+                "text": "Binoning yuqoridan ko‘rinishi nima deb ataladi?",
+                "type": "single",
+                "options": ["Fasad", "Reja", "Kesim", "Perspektiva"],
+                "correct": 1
+            },
+            {
+                "id": "q7",
+                "text": "Sharining barcha ortogonal proyeksiyalari qanday?",
+                "type": "single",
+                "options": ["Kvadrat", "Ellips", "Aylana", "Uchburchak"],
+                "correct": 2
+            },
+            {
+                "id": "q8",
+                "text": "2D chizmadan 3D jismni tasavvur qilish qaysi ko‘nikmani rivojlantiradi?",
+                "type": "single",
+                "options": ["Hisoblash", "Fazoviy tasavvur", "Yodlash", "Rangni farqlash"],
+                "correct": 1
+            }
+        ]
+    },
+    {
+        "id": "test-solids",
+        "title": "Geometrik jismlar testi",
+        "type": "topic",
+        "description": "Kub, prizma, piramida, silindr, konus va shar bo‘yicha bilimlarni tekshirish.",
+        "topic_id": "topic-04",
+        "time_limit": 15,
+        "questions": [
+            {
+                "id": "qs1",
+                "text": "Kubning fazoviy diagonali formulasi qaysi?",
+                "type": "single",
+                "options": ["a√2", "a√3", "2a", "a²"],
+                "correct": 1
+            },
+            {
+                "id": "qs2",
+                "text": "Piramida hajmi formulasi:",
+                "type": "single",
+                "options": ["V = S × h", "V = (1/3)S × h", "V = (1/2)S × h", "V = 4/3 πr³"],
+                "correct": 1
+            },
+            {
+                "id": "qs3",
+                "text": "Silindrning yon sirt yuzi:",
+                "type": "single",
+                "options": ["2πrh", "πr²", "4πr²", "πrl"],
+                "correct": 0
+            },
+            {
+                "id": "qs4",
+                "text": "Chizmaga qarab: front — uchburchak, gorizontal — aylana. Bu qaysi jism?",
+                "type": "single",
+                "options": ["Kub", "Silindr", "Konus", "Prizma"],
+                "correct": 2
+            },
+            {
+                "id": "qs5",
+                "text": "Chizmaga qarab: front — to‘g‘ri to‘rtburchak, gorizontal — aylana. Bu qaysi jism?",
+                "type": "single",
+                "options": ["Konus", "Silindr", "Piramida", "Shar"],
+                "correct": 1
+            }
+        ]
+    },
+    {
+        "id": "test-proj",
+        "title": "Proyeksiyalar testi",
+        "type": "topic",
+        "description": "Ortogonal proyeksiyalar va 2D–3D bog‘liqlik bo‘yicha test.",
+        "topic_id": "topic-01",
+        "time_limit": 15,
+        "questions": [
+            {
+                "id": "qp1",
+                "text": "Gorizontal proyeksiya tekisligi qanday belgilanadi?",
+                "type": "single",
+                "options": ["V", "H", "W", "P"],
+                "correct": 1
+            },
+            {
+                "id": "qp2",
+                "text": "Front proyeksiyada qaysi koordinata ko‘rinmaydi?",
+                "type": "single",
+                "options": ["x", "y", "z", "hech biri"],
+                "correct": 1
+            },
+            {
+                "id": "qp3",
+                "text": "Fasad qaysi proyeksiyaga mos keladi?",
+                "type": "single",
+                "options": ["Gorizontal", "Frontal", "Profil", "Aksonometrik"],
+                "correct": 1
+            },
+            {
+                "id": "qp4",
+                "text": "Nuqta H tekisligida yotsa, uning qaysi koordinatasi nol?",
+                "type": "single",
+                "options": ["x = 0", "y = 0", "z = 0", "x = y = 0"],
+                "correct": 2
+            },
+            {
+                "id": "qp5",
+                "text": "Uchta proyeksiyani bir vaqtda ko‘rsatish nima uchun foydali?",
+                "type": "single",
+                "options": [
+                    "Faqat go‘zallik uchun",
+                    "Jismning fazoviy shaklini to‘liq tushunish uchun",
+                    "Faqat o‘lchamlarni yozish uchun",
+                    "Kerak emas"
+                ],
+                "correct": 1
+            }
+        ]
+    },
+    {
+        "id": "test-post",
+        "title": "Yakuniy baholash testi",
+        "type": "posttest",
+        "description": "O‘qitishdan keyin fazoviy tasavvur darajasini qayta o‘lchash. Boshlang‘ich test bilan taqqoslanadi.",
+        "topic_id": null,
+        "time_limit": 25,
+        "questions": [
+            {
+                "id": "qf1",
+                "text": "Kubning nechta qirrasi bor?",
+                "type": "single",
+                "options": ["6", "8", "12", "16"],
+                "correct": 2
+            },
+            {
+                "id": "qf2",
+                "text": "Front — to‘g‘ri to‘rtburchak, gorizontal — aylana. Jism?",
+                "type": "single",
+                "options": ["Konus", "Silindr", "Kub", "Piramida"],
+                "correct": 1
+            },
+            {
+                "id": "qf3",
+                "text": "Piramida hajmi prizma hajmidan qanday farq qiladi (bir xil asos va balandlikda)?",
+                "type": "single",
+                "options": ["Teng", "3 marta kichik", "2 marta katta", "4 marta kichik"],
+                "correct": 1
+            },
+            {
+                "id": "qf4",
+                "text": "Tekislikning proyeksiya tekisligi bilan kesishish chizig‘i nima?",
+                "type": "single",
+                "options": ["Diagonal", "Iz", "Normal", "Generator"],
+                "correct": 1
+            },
+            {
+                "id": "qf5",
+                "text": "Binoning yon ko‘rinishi qaysi proyeksiya?",
+                "type": "single",
+                "options": ["H", "V", "W (profil)", "Perspektiva"],
+                "correct": 2
+            },
+            {
+                "id": "qf6",
+                "text": "Sharining front va gorizontal proyeksiyalari:",
+                "type": "single",
+                "options": ["Kvadrat va aylana", "Ikkalasi ham aylana", "Uchburchak va aylana", "Ellips va kvadrat"],
+                "correct": 1
+            },
+            {
+                "id": "qf7",
+                "text": "3D modeldan proyeksiya olish mashqi nima rivojlantiradi?",
+                "type": "single",
+                "options": ["Faqat chizish tezligini", "Fazoviy tasavvur va proyeksiya tushunchasini", "Faqat xotirani", "Hech narsa"],
+                "correct": 1
+            },
+            {
+                "id": "qf8",
+                "text": "Kubni diagonal tekislik bilan kesganda kesim figura qanday bo‘lishi mumkin?",
+                "type": "single",
+                "options": ["Faqat uchburchak", "Olti burchak yoki to‘rtburchak", "Faqat aylana", "Faqat nuqta"],
+                "correct": 1
+            }
+        ]
+    }
+]

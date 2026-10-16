@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: fazotalim
+    runtime: docker
+    plan: free
+    healthCheckPath: /

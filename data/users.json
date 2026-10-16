@@ -1,0 +1,18 @@
+[
+    {
+        "id": "admin001",
+        "name": "Administrator",
+        "email": "admin@fazotalim.uz",
+        "password": "$2y$10$xg/AuzZFpuWJAba7s/ccbuKGoBLdcFiFclHfKnV87IPpLR4UMjudG",
+        "role": "admin",
+        "created_at": "2026-01-01 00:00:00"
+    },
+    {
+        "id": "stu001",
+        "name": "Talaba",
+        "email": "talaba@fazotalim.uz",
+        "password": "$2y$10$xg/AuzZFpuWJAba7s/ccbuKGoBLdcFiFclHfKnV87IPpLR4UMjudG",
+        "role": "student",
+        "created_at": "2026-01-01 00:00:00"
+    }
+]

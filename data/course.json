@@ -1,0 +1,140 @@
+{
+    "tasvirlash": {
+        "intro": "Chizma geometriyada fazoviy shakl tekislikda bir necha usul bilan tasvirlanadi. Asosiy usullar — ortogonal (Monje), aksonometrik va perspektiv tasvirlash.",
+        "blocks": [
+            {
+                "h": "Ortogonal proyeksiya (Monje usuli)",
+                "p": "Jism nuqtalari o‘zaro perpendikulyar tekisliklarga — gorizontal (H), frontal (V) va profil (W) — to‘g‘ri chiziqlar bilan tushiriladi. Ikki yoki uch proyeksiya birgalikda epyur deyiladi. Bu usul o‘lchamni buzmasdan chizish imkonini beradi, shuning uchun muhandislik chizmalarining asosidir."
+            },
+            {
+                "h": "Aksonometriya",
+                "p": "Jism bitta tekislikka qiya yo‘nalishda proyeksiyalanadi. Koordinata o‘qlari 120° (izometriya) yoki boshqa burchaklarda chiqadi. Shakl yaqqol ko‘rinadi, lekin ba’zi o‘lchamlar qisqaradi. Texnik eskiz va tushuntirish chizmalarida qo‘llanadi."
+            },
+            {
+                "h": "Perspektiva",
+                "p": "Kuzatuvchi nuqtasidan chiqqan nurlar rasm tekisligi bilan kesishadi. Uzoqdagi qirralar qisqarib, uchish nuqtalariga intiladi. Arxitektura va interyer tasvirida fazoviy chuqurlik shu usulda beriladi."
+            }
+        ],
+        "steps": [
+            "Avval ortogonal epyurda o‘lcham va holatni aniqlang.",
+            "Yaqqol tasavvur uchun izometrik yoki dimetrik chizma tuzing.",
+            "Binoning ko‘rinishi kerak bo‘lsa, bir yoki ikki uchish nuqtali perspektiva qo‘llang."
+        ]
+    },
+    "nuqta": {
+        "intro": "Nuqta — fazodagi eng oddiy geometrik element. Uning holati uchta koordinata (x, y, z) va shunga mos uchta proyeksiya orqali beriladi.",
+        "blocks": [
+            {
+                "h": "Proyeksiya tekisliklari",
+                "p": "H — gorizontal, V — frontal, W — profil tekislik. Nuqta A ning proyeksiyalari A′ (H), A″ (V), A‴ (W) deb belgilanadi. A′ va A″ bir vertikal bog‘lovchi chiziqda, A″ va A‴ esa gorizontal bog‘lovchida yotadi."
+            },
+            {
+                "h": "Koordinatalar",
+                "p": "x — kenglik (V va H da), y — chuqurlik (H va W da), z — balandlik (V va W da). Agar z = 0 bo‘lsa, nuqta H tekisligida; y = 0 bo‘lsa V da; x = 0 bo‘lsa W da yotadi."
+            }
+        ],
+        "formulas": [
+            "A(x, y, z) — fazoviy nuqta",
+            "A′(x, y, 0) — gorizontal proyeksiya",
+            "A″(x, 0, z) — frontal proyeksiya",
+            "A‴(0, y, z) — profil proyeksiya"
+        ],
+        "steps": [
+            "x masofani o‘qqa qo‘ying va vertikal bog‘lovchi chizing.",
+            "A′ ni y, A″ ni z bo‘yicha belgilang.",
+            "Profil proyeksiyani 45° yoy yoki koordinata yordamida toping."
+        ]
+    },
+    "chiziq": {
+        "intro": "To‘g‘ri chiziq ikki nuqta orqali beriladi. Uning epyurdagi ko‘rinishi shu nuqtalar proyeksiyalarini tutashtirishdan hosil bo‘ladi.",
+        "blocks": [
+            {
+                "h": "Umumiy holat",
+                "p": "Chiziq hech qaysi proyeksiya tekisligiga parallel emas. Uchala proyeksiya ham qisqargan kesma bo‘ladi. Haqiqiy uzunlik qo‘shimcha usul (aylantirish yoki tekislik almashtirish) bilan topiladi."
+            },
+            {
+                "h": "Xususiy holatlar",
+                "p": "H ga parallel (gorizontal) — z bir xil, A″B″ gorizontal. V ga parallel (frontal) — y bir xil. W ga parallel (profil) — x bir xil. Tekislikka perpendikulyar chiziq o‘sha tekislikda nuqtaga aylanadi."
+            }
+        ],
+        "formulas": [
+            "L = √[(x₂−x₁)² + (y₂−y₁)² + (z₂−z₁)²]",
+            "H ga parallel: z₁ = z₂",
+            "V ga parallel: y₁ = y₂",
+            "W ga parallel: x₁ = x₂"
+        ],
+        "steps": [
+            "Ikki nuqtaning uchala proyeksiyasini chizing.",
+            "A′B′, A″B″, A‴B‴ ni tutashtiring.",
+            "Holatni tekshiring: qaysi koordinata o‘zgarmas, shu tekislikka parallel."
+        ]
+    },
+    "tekislik": {
+        "intro": "Tekislik uch nuqta, to‘g‘ri chiziq va nuqta, ikki kesishuvchi yoki parallel to‘g‘ri chiziq orqali beriladi. Epyurda izlar bilan ham tasvirlanadi.",
+        "blocks": [
+            {
+                "h": "Izlar",
+                "p": "Tekislikning H, V, W bilan kesishish chiziqlari — gorizontal, frontal va profil izlar. Izlar o‘zaro x, y, z o‘qlarida uchrashadi. Izlar orqali tekislikning qiyaligi o‘qiladi."
+            },
+            {
+                "h": "Xususiy holatdagi tekisliklar",
+                "p": "Proyeksiyalovchi tekislik bir proyeksiyada to‘g‘ri chiziq (iz) ko‘rinishida chiqadi. Darajali tekislik (H, V yoki W ga parallel) ikkita proyeksiyada haqiqiy kattalikda ko‘rinadi. Bu holat kesim va haqiqiy shaklni topishni osonlashtiradi."
+            }
+        ],
+        "formulas": [
+            "Ax + By + Cz + D = 0",
+            "H-izi: z = 0 dagi kesishish",
+            "V-izi: y = 0 dagi kesishish"
+        ],
+        "steps": [
+            "Tekislikni beruvchi elementlarni epyurga tushiring.",
+            "Zarur bo‘lsa izlarni toping.",
+            "Nuqta tekislikda yotishini bog‘lovchi chiziqlar bilan tekshiring."
+        ]
+    },
+    "epyur": {
+        "intro": "Umumiy holatdagi chiziq yoki tekislikning haqiqiy o‘lchami epyurni qayta tuzish orqali topiladi. Asosiy usullar — proyeksiya tekisliklarini almashtirish, aylantirish va yoyish (tekislash).",
+        "blocks": [
+            {
+                "h": "Proyeksiya tekisliklarini almashtirish",
+                "p": "Yangi tekislik eskiga perpendikulyar qilib kiritiladi. Chiziq yangi tekislikka parallel bo‘lgach, proyeksiya haqiqiy uzunlikni beradi. Ikkinchi almashtirish chiziqni nuqtaga yoki tekislikni izga aylantiradi."
+            },
+            {
+                "h": "Aylantirish",
+                "p": "Figura o‘q atrofida buriladi, toki u proyeksiya tekisligiga parallel bo‘lsin. O‘q odatda H yoki V ga perpendikulyar olinadi. Aylanish radiuslari epyurda yoylar bilan chiziladi."
+            },
+            {
+                "h": "Yoyish (tekislash)",
+                "p": "Tekislik iz atrofida burilib, proyeksiya tekisligiga yotqiziladi. Shunda tekislikdagi figura haqiqiy shaklda ko‘rinadi. Uchburchak, kesim va burchak masalalarida qo‘llanadi."
+            }
+        ],
+        "steps": [
+            "Qanday o‘lcham kerakligini aniqlang (uzunlik, burchak, shakl).",
+            "Almashtirish yoki aylantirishdan birini tanlang.",
+            "Yangi epyurda haqiqiy kattalikni o‘lchang va asosiy chizmaga qaytaring."
+        ]
+    },
+    "egri": {
+        "intro": "Egri chiziqlar tekis (bir tekislikda) va fazoviy bo‘ladi. Chizma geometriyada aylana, ellips, parabola, giperbola va vint chizig‘i ko‘p uchraydi.",
+        "blocks": [
+            {
+                "h": "Tekis egri chiziqlar",
+                "p": "Aylana o‘z tekisligiga parallel proyeksiyada aylana, qiya holatda ellips beradi. Konus kesimlari — ellips, parabola, giperbola — tekislikning konus o‘qiga nisbatan holatiga bog‘liq."
+            },
+            {
+                "h": "Fazoviy egri chiziqlar",
+                "p": "Silindrik vint chizig‘i silindr yasovchisi bo‘ylab bir tekis aylanma va o‘q bo‘yicha siljishdan hosil bo‘ladi. Uning H proyeksiyasi aylana, V proyeksiyasi sinusoidaga yaqin to‘lqin. Zinapoya, prujina va burg‘u shu qonuniyatga bo‘ysunadi."
+            }
+        ],
+        "formulas": [
+            "Aylana: x² + y² = r²",
+            "Ellips: x²/a² + y²/b² = 1",
+            "Vint: x = r cos t, y = r sin t, z = c t"
+        ],
+        "steps": [
+            "Egri chiziq tekis yoki fazoviyligini aniqlang.",
+            "Xarakterli nuqtalarni (uch, diametr, qadam) epyurga tushiring.",
+            "Oraliq nuqtalarni bog‘lab, ravon egri chizing."
+        ]
+    }
+}

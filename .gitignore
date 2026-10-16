@@ -1,0 +1,6 @@
+.DS_Store
+*.log
+uploads/videos/*
+!uploads/videos/.gitkeep
+.env
+

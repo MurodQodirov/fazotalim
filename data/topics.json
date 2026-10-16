@@ -1,0 +1,164 @@
+[
+    {
+        "id": "topic-01",
+        "title": "Nuqta va uning proyeksiyalari",
+        "section": "practice",
+        "objective": "Nuqtaning uchta proyeksiya tekisligidagi tasvirini tushunish va chizish.",
+        "theory": "Chizma geometriyada nuqta fazodagi eng oddiy element hisoblanadi. Nuqtaning holati uchta proyeksiya tekisligi — gorizontal (H), frontal (V) va profil (W) — ga tushirilgan proyeksiyalari orqali aniqlanadi. Nuqta A ning proyeksiyalari A′, A″ va A‴ deb belgilanadi.",
+        "formulas": [
+            "A(x, y, z) — fazoviy koordinatalar",
+            "A′(x, y, 0) — gorizontal proyeksiya",
+            "A″(x, 0, z) — frontal proyeksiya",
+            "A‴(0, y, z) — profil proyeksiya"
+        ],
+        "example": "A(40, 30, 50) nuqtasining proyeksiyalarini chizing. Avval x=40 mm bo‘yicha vertikal bog‘lovchi chiziq, keyin y va z bo‘yicha masofalarni belgilang.",
+        "tasks": [
+            "B(25, 40, 35) nuqtasining uchta proyeksiyasini chizing.",
+            "C′ va C″ berilgan; C‴ ni toping.",
+            "Nuqta D ni H tekisligiga yaqinlashtiring (z ni kamaytiring) va proyeksiyalarning o‘zgarishini kuzating."
+        ],
+        "solid_id": null,
+        "order": 1
+    },
+    {
+        "id": "topic-02",
+        "title": "To‘g‘ri chiziq va uning proyeksiyalari",
+        "section": "practice",
+        "objective": "To‘g‘ri chiziqning fazodagi holatini proyeksiyalar orqali aniqlash.",
+        "theory": "To‘g‘ri chiziq ikki nuqta orqali beriladi. Uning proyeksiyalari shu nuqtalar proyeksiyalarini tutashtirish orqali hosil bo‘ladi. To‘g‘ri chiziq proyeksiya tekisliklariga parallel, perpendikulyar yoki umumiy holatda bo‘lishi mumkin.",
+        "formulas": [
+            "AB chiziq: A(x₁,y₁,z₁), B(x₂,y₂,z₂)",
+            "Uzunlik: L = √[(x₂−x₁)² + (y₂−y₁)² + (z₂−z₁)²]",
+            "H ga parallel: z₁ = z₂",
+            "V ga parallel: y₁ = y₂"
+        ],
+        "example": "A(30,20,40) va B(60,45,40) nuqtalari orqali o‘tgan chiziq H tekisligiga parallel (z bir xil). Front proyeksiya gorizontal bo‘ladi.",
+        "tasks": [
+            "Umumiy holatdagi to‘g‘ri chiziqning proyeksiyalarini chizing.",
+            "V tekisligiga parallel chiziq berilgan; uning haqiqiy uzunligini aniqlang.",
+            "Ikki to‘g‘ri chiziqning kesishishini proyeksiyalarda tekshiring."
+        ],
+        "solid_id": null,
+        "order": 2
+    },
+    {
+        "id": "topic-03",
+        "title": "Tekislik va uning izlari",
+        "section": "practice",
+        "objective": "Tekislikni uch nuqta, to‘g‘ri chiziq va nuqta yoki izlar orqali berish usullarini o‘rganish.",
+        "theory": "Tekislik fazoda uch nuqta (bir to‘g‘ri chiziqda yotmagan), to‘g‘ri chiziq va undan tashqaridagi nuqta, yoki ikki kesishuvchi to‘g‘ri chiziq orqali beriladi. Tekislikning proyeksiya tekisliklari bilan kesishish chiziqlari — izlar deyiladi.",
+        "formulas": [
+            "Tekislik tenglamasi: Ax + By + Cz + D = 0",
+            "H-izi: z = 0 tekisligidagi kesishish",
+            "V-izi: y = 0 tekisligidagi kesishish"
+        ],
+        "example": "α tekisligi uch nuqta A, B, C orqali berilgan. Har bir nuqtaning proyeksiyalarini chizib, tekislik izlarini toping.",
+        "tasks": [
+            "Uch nuqta orqali berilgan tekislikning izlarini toping.",
+            "Tekislikda yotgan nuqtaning yetishmayotgan proyeksiyasini aniqlang.",
+            "Ikki tekislikning kesishish chizig‘ini proyeksiyalarda chizing."
+        ],
+        "solid_id": null,
+        "order": 3
+    },
+    {
+        "id": "topic-04",
+        "title": "Kub va uning proyeksiyalari",
+        "section": "solids",
+        "objective": "Kub modelini 3D da o‘rganish va uning ortogonal proyeksiyalarini tushunish.",
+        "theory": "Kubning barcha qirralari teng. Agar kub asosiy holatda joylashsa, uning uchta proyeksiyasi ham kvadrat ko‘rinishida bo‘ladi. Kubni aylantirganda proyeksiyalar o‘zgaradi — bu fazoviy tasavvurni rivojlantiradi.",
+        "formulas": [
+            "V = a³",
+            "S = 6a²",
+            "Diagonal (fazoviy): d = a√3",
+            "Yoq diagonali: d_y = a√2"
+        ],
+        "example": "a = 40 mm kubning front, gorizontal va profil proyeksiyalarini chizing. Keyin kubni vertikal o‘q atrofida 30° aylantirib, proyeksiyalarning o‘zgarishini kuzating.",
+        "tasks": [
+            "Kubning 3D modelini laboratoriya bo‘limida aylantiring va proyeksiyalarni kuzating.",
+            "Kubning fazoviy diagonallarini chizing.",
+            "2D chizmadan kubning fazodagi holatini tasavvur qiling."
+        ],
+        "solid_id": "cube",
+        "order": 4
+    },
+    {
+        "id": "topic-05",
+        "title": "Prizma va piramida",
+        "section": "solids",
+        "objective": "Prizma va piramidaning farqini proyeksiyalar orqali ajrata olish.",
+        "theory": "Prizmaning asoslari parallel, yon qirralari esa parallel. Piramidada esa barcha yon qirralar bitta cho‘qqiga tutashadi. Bu farq ularning proyeksiyalarida aniq ko‘rinadi.",
+        "formulas": [
+            "Prizma: V = S_asos × h",
+            "Piramida: V = (1/3) × S_asos × h"
+        ],
+        "example": "Uchburchakli prizma va uchburchakli piramidaning proyeksiyalarini solishtiring. Piramidada cho‘qqi proyeksiyasi asos markaziga yaqin joylashadi.",
+        "tasks": [
+            "Prizma va piramidani 3D laboratoriyada solishtiring.",
+            "Chizmaga qarab jismning prizma yoki piramida ekanligini aniqlang.",
+            "Piramidaning kesimini chizing."
+        ],
+        "solid_id": "pyramid",
+        "order": 5
+    },
+    {
+        "id": "topic-06",
+        "title": "Aylanma jismlar: silindr, konus, shar",
+        "section": "solids",
+        "objective": "Aylanma jismlarning proyeksiya xususiyatlarini o‘rganish.",
+        "theory": "Silindr va konusning gorizontal proyeksiyasi aylana, front proyeksiyasi esa to‘g‘ri to‘rtburchak (silindr) yoki uchburchak (konus) bo‘ladi. Sharning barcha proyeksiyalari aylana.",
+        "formulas": [
+            "Silindr: V = πr²h",
+            "Konus: V = (1/3)πr²h",
+            "Shar: V = (4/3)πr³"
+        ],
+        "example": "Silindrning front proyeksiyasida balandlik, gorizontalida radius ko‘rinadi. Bu 2D chizmadan 3D jismni tiklashning klassik usuli.",
+        "tasks": [
+            "Uchta aylanma jismni laboratoriyada solishtiring.",
+            "Chizmaga qarab silindr, konus yoki sharni aniqlang.",
+            "Konusning o‘qiga parallel kesimini tasvirlang."
+        ],
+        "solid_id": "cylinder",
+        "order": 6
+    },
+    {
+        "id": "topic-07",
+        "title": "Kesimlar va kesishish chiziqlari",
+        "section": "practice",
+        "objective": "Jismning tekislik bilan kesimini va ikki jism kesishishini tushunish.",
+        "theory": "Kesim — jismning berilgan tekislik bilan kesishishida hosil bo‘ladigan figura. Kesishish chizig‘i esa ikki sirtning umumiy nuqtalari to‘plami. Bu mavzu fazoviy tasavvurning yuqori darajasini talab qiladi.",
+        "formulas": [
+            "Kubning diagonal tekislikdagi kesimi — olti burchak yoki to‘rtburchak",
+            "Silindrning o‘qiga parallel kesimi — to‘g‘ri to‘rtburchak",
+            "Silindrning o‘qiga perpendikulyar kesimi — aylana"
+        ],
+        "example": "Kubni diagonal tekislik bilan kesganda, kesim figura olti burchak bo‘lishi mumkin. Buni 3D modelda kuzating.",
+        "tasks": [
+            "Kubning o‘rtasidan o‘tuvchi gorizontal kesimni chizing.",
+            "Piramidaning cho‘qqidan o‘tmaydigan kesimini toping.",
+            "Silindr va prizma kesishish chizig‘ini taxminlang."
+        ],
+        "solid_id": "cube",
+        "order": 7
+    },
+    {
+        "id": "topic-08",
+        "title": "Binoning reja, fasad va yon ko‘rinishi",
+        "section": "architecture",
+        "objective": "Arxitektura chizmalarida geometrik proyeksiyalarning qo‘llanilishini ko‘rish.",
+        "theory": "Binoning yuqoridan ko‘rinishi — reja (gorizontal proyeksiya), old tomondan — fasad (frontal proyeksiya), yon tomondan — yon ko‘rinish (profil proyeksiya). Bu chizma geometriyaning amaliy qo‘llanilishidir.",
+        "formulas": [
+            "Reja ↔ H proyeksiya",
+            "Fasad ↔ V proyeksiya",
+            "Yon ko‘rinish ↔ W proyeksiya"
+        ],
+        "example": "Oddiy uy modelida deraza va eshiklarning reja va fasadda qanday aks etishini kuzating. Rejada eshik ochilish yo‘nalishi, fasadda esa balandlik ko‘rinadi.",
+        "tasks": [
+            "Uy modelining reja, fasad va yon ko‘rinishlarini solishtiring.",
+            "Berilgan rejadan fasadni taxminlang.",
+            "Oddiy xona rejasini chizing va undan 3D ni tasavvur qiling."
+        ],
+        "solid_id": null,
+        "order": 8
+    }
+]

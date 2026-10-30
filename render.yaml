@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: fazotalim
+    name: chizmageometriya
     runtime: docker
     plan: free
     healthCheckPath: /

@@ -2,18 +2,18 @@
 require_once dirname(__DIR__) . '/includes/functions.php';
 $items = load_json('presentations.json');
 $labels = course_labels();
-$page_title = "Prezentatsiyalar";
+$page_title = t('sec.prezentatsiyalar');
 require dirname(__DIR__) . '/includes/header.php';
 ?>
 
 <div class="container page-hero">
-    <h1>Prezentatsiyalar</h1>
-    <p>Mavzular bo‘yicha slayd va taqdimot materiallari.</p>
+    <h1><?= e(t('sec.prezentatsiyalar')) ?></h1>
+    <p><?= e(t('pres.lead')) ?></p>
 </div>
 
 <div class="container test-grid">
     <?php if (!$items): ?>
-        <div class="empty-state">Hozircha prezentatsiya yo‘q.</div>
+        <div class="empty-state"><?= e(t('pres.empty')) ?></div>
     <?php endif; ?>
     <?php foreach ($items as $item): ?>
         <article class="test-card">
@@ -21,7 +21,7 @@ require dirname(__DIR__) . '/includes/header.php';
             <h3><?= e($item['title'] ?? '') ?></h3>
             <p><?= e($item['description'] ?? '') ?></p>
             <?php if (!empty($item['url'])): ?>
-                <a class="btn btn-primary btn-sm" href="<?= e($item['url']) ?>" target="_blank" rel="noopener">Ochish</a>
+                <a class="btn btn-primary btn-sm" href="<?= e($item['url']) ?>" target="_blank" rel="noopener"><?= e(t('pres.open')) ?></a>
             <?php endif; ?>
         </article>
     <?php endforeach; ?>

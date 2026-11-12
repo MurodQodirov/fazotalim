@@ -13,7 +13,10 @@
     let showFaces = true;
 
     const { scene, camera, renderer } = createSceneBasics(THREE, canvas);
-    const orbit = enableOrbit(canvas, camera);
+    function render() {
+        renderer.render(scene, camera);
+    }
+    const orbit = enableOrbit(canvas, camera, { x: 0, y: 0, z: 0 }, render);
     orbit.reset();
 
     const infoName = document.getElementById('infoName');
@@ -57,6 +60,7 @@
 
         updateProjections();
         applyVisibility();
+        render();
     }
 
     function updateProjections() {
@@ -93,6 +97,7 @@
             showEdges = !showEdges;
             btnEdges.classList.toggle('active', showEdges);
             applyVisibility();
+            render();
         });
     }
     if (btnFaces) {
@@ -100,6 +105,7 @@
             showFaces = !showFaces;
             btnFaces.classList.toggle('active', showFaces);
             applyVisibility();
+            render();
         });
     }
     if (btnReset) {
@@ -113,15 +119,10 @@
         camera.aspect = w / Math.max(h, 1);
         camera.updateProjectionMatrix();
         renderer.setSize(w, h, false);
+        render();
     }
     window.addEventListener('resize', resize);
     resize();
-
-    function animate() {
-        requestAnimationFrame(animate);
-        renderer.render(scene, camera);
-    }
-    animate();
 
     loadSolid(currentId);
 })();

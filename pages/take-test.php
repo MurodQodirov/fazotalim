@@ -1,12 +1,12 @@
 <?php
 require_once dirname(__DIR__) . '/includes/functions.php';
 
-$tests = load_json('tests.json');
+$tests = load_content('tests.json');
 $id = $_GET['id'] ?? '';
 $test = find_by_id($tests, $id);
 
 if (!$test) {
-    flash('error', 'Test topilmadi.');
+    flash('error', t('test.notfound'));
     redirect(base_url('pages/tests.php'));
 }
 
@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result = [
         'id' => generate_id('res_'),
         'user_id' => current_user()['id'] ?? 'guest',
-        'user_name' => current_user()['name'] ?? 'Mehmon',
+        'user_name' => current_user()['name'] ?? t('guest'),
         'test_id' => $test['id'],
         'test_title' => $test['title'],
         'test_type' => $test['type'],
@@ -95,9 +95,9 @@ require dirname(__DIR__) . '/includes/header.php';
 ?>
 
 <div class="container page-hero">
-    <p class="eyebrow">Test</p>
+    <p class="eyebrow"><?= e(t('test.eyebrow')) ?></p>
     <h1><?= e($test['title']) ?></h1>
-    <p><?= e($test['description']) ?> · <?= count($test['questions']) ?> savol · <?= (int)$test['time_limit'] ?> daqiqa</p>
+    <p><?= e($test['description']) ?> · <?= e(t('test.meta', ['n' => (string) count($test['questions']), 'm' => (string) (int) $test['time_limit']])) ?></p>
 </div>
 
 <div class="container" style="padding-bottom:3rem;max-width:800px">
@@ -116,8 +116,8 @@ require dirname(__DIR__) . '/includes/header.php';
             </div>
         <?php endforeach; ?>
 
-        <button type="submit" class="btn btn-primary">Natijani ko‘rish</button>
-        <a class="btn btn-ghost" href="<?= base_url('pages/tests.php') ?>">Bekor qilish</a>
+        <button type="submit" class="btn btn-primary"><?= e(t('test.submit')) ?></button>
+        <a class="btn btn-ghost" href="<?= base_url('pages/tests.php') ?>"><?= e(t('test.cancel')) ?></a>
     </form>
 </div>
 

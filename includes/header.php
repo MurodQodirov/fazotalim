@@ -4,17 +4,17 @@ $user = current_user();
 $current = basename($_SERVER['PHP_SELF'] ?? '');
 ?>
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="<?= current_lang() === 'ru' ? 'ru' : 'uz' ?>">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= e($page_title ?? "FazoTa'lim") ?> — FazoTa'lim</title>
-    <meta name="description" content="Chizma geometriyani o‘qitishda fazoviy tasavvurni rivojlantiruvchi interaktiv o‘quv platforma">
-    <meta name="author" content="<?= e(SITE_AUTHOR) ?>, <?= e(SITE_SUPERVISOR) ?>">
+    <meta name="description" content="<?= e(t('meta.description')) ?>">
+    <meta name="author" content="<?= e(SITE_AUTHOR) ?>, <?= e(supervisor_name()) ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="<?= asset('css/style.css') ?>?v=12">
+    <link rel="stylesheet" href="<?= asset('css/style.css') ?>?v=14">
     <?php if (!empty($extra_css)): ?>
         <?php foreach ((array)$extra_css as $css): ?>
             <link rel="stylesheet" href="<?= asset('css/' . $css) ?>">
@@ -23,7 +23,16 @@ $current = basename($_SERVER['PHP_SELF'] ?? '');
     <script>
         window.FAZO = {
             baseUrl: <?= json_encode(rtrim(base_url(), '/')) ?>,
-            assetUrl: <?= json_encode(rtrim(asset(''), '/')) ?>
+            assetUrl: <?= json_encode(rtrim(asset(''), '/')) ?>,
+            lang: <?= json_encode(current_lang()) ?>,
+            shapes: {
+                cube: <?= json_encode(t('shape.cube')) ?>,
+                pyramid: <?= json_encode(t('shape.pyramid')) ?>,
+                cone: <?= json_encode(t('shape.cone')) ?>,
+                cylinder: <?= json_encode(t('shape.cylinder')) ?>,
+                prism: <?= json_encode(t('shape.prism')) ?>,
+                sphere: <?= json_encode(t('shape.sphere')) ?>
+            }
         };
     </script>
 </head>
@@ -54,7 +63,7 @@ $current = basename($_SERVER['PHP_SELF'] ?? '');
             <nav class="main-nav" id="mainNav">
                 <?php $activeSection = current_section_id(); ?>
                 <div class="nav-drop" id="navDrop">
-                    <button type="button" class="nav-drop-btn <?= $activeSection ? 'active' : '' ?>" id="navDropBtn" aria-expanded="false">Bo‘limlar</button>
+                    <button type="button" class="nav-drop-btn <?= $activeSection ? 'active' : '' ?>" id="navDropBtn" aria-expanded="false"><?= e(t('nav.sections')) ?></button>
                     <div class="nav-drop-menu">
                         <?php foreach (course_sections() as $s): ?>
                             <a href="<?= base_url($s['file']) ?>" class="<?= $activeSection === $s['id'] ? 'active' : '' ?>">
@@ -63,11 +72,11 @@ $current = basename($_SERVER['PHP_SELF'] ?? '');
                         <?php endforeach; ?>
                     </div>
                 </div>
-                <a href="<?= base_url('pages/solids.php') ?>" class="<?= in_array($current, ['solids.php', 'lab.php'], true) ? 'active' : '' ?>">Shakllar</a>
-                <a href="<?= base_url('pages/course.php?id=tasvirlash') ?>" class="<?= $activeSection === 'tasvirlash' ? 'active' : '' ?>">Proyeksiyalar</a>
-                <a href="<?= base_url('pages/videos.php') ?>" class="<?= $activeSection === 'videodarslar' ? 'active' : '' ?>">Videodarslar</a>
-                <a href="<?= base_url('pages/tests.php') ?>" class="<?= $activeSection === 'testlar' ? 'active' : '' ?>">Testlar</a>
-                <a href="<?= base_url('pages/software.php') ?>" class="<?= $current === 'software.php' ? 'active' : '' ?>">Dasturlar</a>
+                <a href="<?= base_url('pages/solids.php') ?>" class="<?= in_array($current, ['solids.php', 'lab.php'], true) ? 'active' : '' ?>"><?= e(t('nav.shapes')) ?></a>
+                <a href="<?= base_url('pages/course.php?id=tasvirlash') ?>" class="<?= $activeSection === 'tasvirlash' ? 'active' : '' ?>"><?= e(t('nav.projections')) ?></a>
+                <a href="<?= base_url('pages/videos.php') ?>" class="<?= $activeSection === 'videodarslar' ? 'active' : '' ?>"><?= e(t('nav.videos')) ?></a>
+                <a href="<?= base_url('pages/tests.php') ?>" class="<?= $activeSection === 'testlar' ? 'active' : '' ?>"><?= e(t('nav.tests')) ?></a>
+                <a href="<?= base_url('pages/software.php') ?>" class="<?= $current === 'software.php' ? 'active' : '' ?>"><?= e(t('nav.software')) ?></a>
                 <?php if ($user): ?>
                     <a href="<?= base_url('pages/profile.php') ?>" class="nav-user <?= $current === 'profile.php' ? 'active' : '' ?>">
                         <?= e($user['name']) ?>
@@ -79,12 +88,16 @@ $current = basename($_SERVER['PHP_SELF'] ?? '');
             </nav>
 
             <div class="header-cta">
+                <nav class="lang-switch" aria-label="Language">
+                    <a href="<?= e(lang_url('uz')) ?>" class="<?= current_lang() === 'uz' ? 'active' : '' ?>">UZ</a>
+                    <a href="<?= e(lang_url('ru')) ?>" class="<?= current_lang() === 'ru' ? 'active' : '' ?>">RU</a>
+                </nav>
                 <?php if ($user): ?>
-                    <a href="<?= base_url('pages/logout.php') ?>" class="btn btn-ghost btn-sm">Chiqish</a>
+                    <a href="<?= base_url('pages/logout.php') ?>" class="btn btn-ghost btn-sm"><?= e(t('nav.logout')) ?></a>
                 <?php else: ?>
-                    <a href="<?= base_url('pages/login.php') ?>" class="btn btn-primary btn-sm">Kirish</a>
+                    <a href="<?= base_url('pages/login.php') ?>" class="btn btn-primary btn-sm"><?= e(t('nav.login')) ?></a>
                 <?php endif; ?>
-                <button class="nav-toggle" id="navToggle" aria-label="Menyu" aria-expanded="false">
+                <button class="nav-toggle" id="navToggle" aria-label="<?= e(t('nav.menu')) ?>" aria-expanded="false">
                     <span></span><span></span><span></span>
                 </button>
             </div>

@@ -1,14 +1,14 @@
 <?php
 require_once dirname(__DIR__) . '/includes/functions.php';
-$topics = load_json('topics.json');
+$topics = load_content('topics.json');
 usort($topics, fn($a, $b) => ($a['order'] ?? 0) <=> ($b['order'] ?? 0));
-$page_title = "Ma’ruza matnlari";
+$page_title = t('sec.maruza');
 require dirname(__DIR__) . '/includes/header.php';
 ?>
 
 <div class="container page-hero">
-    <h1>Ma’ruza matnlari</h1>
-    <p>Nazariy tushuntirish, formulalar, ishlangan misol va topshiriqlar.</p>
+    <h1><?= e(t('sec.maruza')) ?></h1>
+    <p><?= e(t('maruza.lead')) ?></p>
 </div>
 
 <div class="container" style="padding-bottom:3rem">

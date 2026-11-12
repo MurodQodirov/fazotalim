@@ -14,18 +14,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password2 = $_POST['password2'] ?? '';
 
     if ($name === '' || $email === '' || $password === '') {
-        $error = 'Barcha maydonlarni to‘ldiring.';
+        $error = t('register.fill');
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $error = 'Email noto‘g‘ri.';
+        $error = t('register.email');
     } elseif (strlen($password) < 6) {
-        $error = 'Parol kamida 6 belgi bo‘lsin.';
+        $error = t('register.short');
     } elseif ($password !== $password2) {
-        $error = 'Parollar mos kelmadi.';
+        $error = t('register.match');
     } else {
         $users = load_json('users.json');
         foreach ($users as $u) {
             if (strcasecmp($u['email'], $email) === 0) {
-                $error = 'Bu email band.';
+                $error = t('register.taken');
                 break;
             }
         }
@@ -40,19 +40,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'created_at' => date('Y-m-d H:i:s'),
             ];
             save_json('users.json', $users);
-            flash('success', 'Ro‘yxatdan o‘tdingiz. Endi kiring.');
+            flash('success', t('register.ok'));
             redirect(base_url('pages/login.php'));
         }
     }
 }
 
-$page_title = "Ro‘yxatdan o‘tish";
+$page_title = t('register.title');
 require dirname(__DIR__) . '/includes/header.php';
 ?>
 
 <div class="auth-wrap">
     <div class="auth-card">
-        <h1>Ro‘yxatdan o‘tish</h1>
+        <h1><?= e(t('register.title')) ?></h1>
 
         <?php if ($error): ?>
             <div class="flash flash-error" style="border-radius:10px;margin-bottom:1rem;padding:0.75rem"><?= e($error) ?></div>
@@ -60,7 +60,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
         <form method="post">
             <div class="form-group">
-                <label for="name">Ism</label>
+                <label for="name"><?= e(t('register.name')) ?></label>
                 <input type="text" id="name" name="name" required value="<?= e($_POST['name'] ?? '') ?>">
             </div>
             <div class="form-group">
@@ -68,18 +68,18 @@ require dirname(__DIR__) . '/includes/header.php';
                 <input type="email" id="email" name="email" required value="<?= e($_POST['email'] ?? '') ?>">
             </div>
             <div class="form-group">
-                <label for="password">Parol</label>
+                <label for="password"><?= e(t('login.password')) ?></label>
                 <input type="password" id="password" name="password" required>
             </div>
             <div class="form-group">
-                <label for="password2">Parolni takrorlang</label>
+                <label for="password2"><?= e(t('register.password2')) ?></label>
                 <input type="password" id="password2" name="password2" required>
             </div>
-            <button type="submit" class="btn btn-primary" style="width:100%">Yaratish</button>
+            <button type="submit" class="btn btn-primary" style="width:100%"><?= e(t('register.submit')) ?></button>
         </form>
 
         <p style="margin-top:1rem;text-align:center;color:var(--muted)">
-            Akkount bormi? <a href="<?= base_url('pages/login.php') ?>">Kirish</a>
+            <?= e(t('register.hasaccount')) ?> <a href="<?= base_url('pages/login.php') ?>"><?= e(t('nav.login')) ?></a>
         </p>
     </div>
 </div>

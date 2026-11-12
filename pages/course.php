@@ -3,11 +3,11 @@ require_once dirname(__DIR__) . '/includes/functions.php';
 
 $id = $_GET['id'] ?? '';
 $section = course_section($id);
-$all = load_json('course.json');
+$all = load_content('course.json');
 $content = $all[$id] ?? null;
 
 if (!$section || !$content) {
-    flash('error', 'Bo‘lim topilmadi.');
+    flash('error', t('course.notfound'));
     redirect(base_url('index.php'));
 }
 
@@ -24,7 +24,7 @@ $sections = course_sections();
 
 <div class="container theory-layout">
     <nav class="topic-nav">
-        <h3 style="margin:0.25rem 0.7rem 0.75rem;font-size:0.95rem">Bo‘limlar</h3>
+        <h3 style="margin:0.25rem 0.7rem 0.75rem;font-size:0.95rem"><?= e(t('nav.sections')) ?></h3>
         <?php foreach ($sections as $s): ?>
             <a href="<?= base_url($s['file']) ?>" class="<?= $s['id'] === $id ? 'active' : '' ?>">
                 <?= e($s['n']) ?>. <?= e($s['title']) ?>
@@ -39,7 +39,7 @@ $sections = course_sections();
         <?php endforeach; ?>
 
         <?php if (!empty($content['formulas'])): ?>
-            <h2>Belgilar va formulalar</h2>
+            <h2><?= e(t('course.formulas')) ?></h2>
             <div class="formula-box">
                 <?php foreach ($content['formulas'] as $f): ?>
                     <div style="margin-bottom:0.35rem"><?= e($f) ?></div>
@@ -48,7 +48,7 @@ $sections = course_sections();
         <?php endif; ?>
 
         <?php if (!empty($content['steps'])): ?>
-            <h2>Ish tartibi</h2>
+            <h2><?= e(t('course.steps')) ?></h2>
             <ol class="step-list">
                 <?php foreach ($content['steps'] as $step): ?>
                     <li><?= e($step) ?></li>
@@ -57,8 +57,8 @@ $sections = course_sections();
         <?php endif; ?>
 
         <div class="hero-actions" style="margin-top:1.5rem">
-            <a class="btn btn-primary" href="<?= base_url('pages/tests.php') ?>">Testlar</a>
-            <a class="btn btn-ghost" href="<?= base_url('pages/lab.php') ?>">3D laboratoriya</a>
+            <a class="btn btn-primary" href="<?= base_url('pages/tests.php') ?>"><?= e(t('nav.tests')) ?></a>
+            <a class="btn btn-ghost" href="<?= base_url('pages/lab.php') ?>"><?= e(t('hero.lab')) ?></a>
         </div>
     </article>
 </div>

@@ -1,0 +1,85 @@
+[
+    {
+        "id": "autocad",
+        "name": "AutoCAD",
+        "vendor": "Autodesk",
+        "category": "2D/3D черчение",
+        "description": "Отраслевой стандарт создания инженерных и архитектурных чертежей. Ортогональные проекции, размеры и точное 2D/3D-черчение.",
+        "uses": ["Технические чертежи", "Планы и фасады", "Детализация", "Обмен в формате DWG"],
+        "level": "Начальный — профессиональный",
+        "resources": [
+            {"title": "Учебный центр Autodesk AutoCAD", "url": "https://www.autodesk.com/learn"},
+            {"title": "Официальный канал AutoCAD на YouTube", "url": "https://www.youtube.com/user/AutoCAD"}
+        ],
+        "icon": "cad"
+    },
+    {
+        "id": "revit",
+        "name": "Revit",
+        "vendor": "Autodesk",
+        "category": "BIM / Архитектура",
+        "description": "Программа информационного моделирования зданий (BIM). План, фасад, разрез и 3D-модель связаны между собой.",
+        "uses": ["Моделирование зданий", "Автосвязь план–фасад–разрез", "Проектная документация", "Конструкции и инженерные системы"],
+        "level": "Средний — профессиональный",
+        "resources": [
+            {"title": "Revit Learn", "url": "https://www.autodesk.com/products/revit/overview"},
+            {"title": "Основы BIM", "url": "https://www.autodesk.com/solutions/bim"}
+        ],
+        "icon": "bim"
+    },
+    {
+        "id": "sketchup",
+        "name": "SketchUp",
+        "vendor": "Trimble",
+        "category": "3D-моделирование",
+        "description": "Быстрое и наглядное 3D-моделирование. Удобно студентам для домов, комнат и геометрических тел.",
+        "uses": ["Быстрые 3D-эскизы", "Интерьер и экстерьер", "Геометрические тела", "Визуализация"],
+        "level": "Начальный",
+        "resources": [
+            {"title": "SketchUp Free", "url": "https://www.sketchup.com/plans-and-pricing/sketchup-free"},
+            {"title": "Учебные материалы SketchUp", "url": "https://learn.sketchup.com/"}
+        ],
+        "icon": "model"
+    },
+    {
+        "id": "blender",
+        "name": "Blender",
+        "vendor": "Blender Foundation",
+        "category": "3D / визуализация",
+        "description": "Бесплатная открытая 3D-программа. Моделирование, рендер, анимация. Экспорт GLB/GLTF удобен для Three.js.",
+        "uses": ["3D-моделирование", "Рендер и материалы", "Анимация", "Экспорт GLTF/GLB"],
+        "level": "Начальный — профессиональный",
+        "resources": [
+            {"title": "Официальный сайт Blender", "url": "https://www.blender.org/"},
+            {"title": "Уроки Blender", "url": "https://www.blender.org/support/tutorials/"}
+        ],
+        "icon": "render"
+    },
+    {
+        "id": "solidworks",
+        "name": "SolidWorks",
+        "vendor": "Dassault Systèmes",
+        "category": "CAD / инженерия",
+        "description": "Параметрическое 3D-моделирование. Детали, сборки и чертежи. Геометрические допуски и сечения.",
+        "uses": ["Параметрическое моделирование", "Сборочные конструкции", "Технические чертежи", "Симуляция"],
+        "level": "Средний — профессиональный",
+        "resources": [
+            {"title": "Обучение SolidWorks", "url": "https://www.solidworks.com/support/resource-center"}
+        ],
+        "icon": "cad"
+    },
+    {
+        "id": "freecad",
+        "name": "FreeCAD",
+        "vendor": "Сообщество FreeCAD",
+        "category": "CAD (бесплатно)",
+        "description": "Бесплатная параметрическая 3D CAD. Полезна студентам как альтернатива AutoCAD/SolidWorks.",
+        "uses": ["Параметрическое 3D", "Технические чертежи", "Основы архитектуры", "Учебные цели"],
+        "level": "Начальный — средний",
+        "resources": [
+            {"title": "Сайт FreeCAD", "url": "https://www.freecad.org/"},
+            {"title": "Документация", "url": "https://wiki.freecad.org/"}
+        ],
+        "icon": "cad"
+    }
+]

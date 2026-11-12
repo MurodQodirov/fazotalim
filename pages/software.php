@@ -1,13 +1,13 @@
 <?php
 require_once dirname(__DIR__) . '/includes/functions.php';
-$software = load_json('software.json');
-$page_title = "Dasturlar katalogi";
+$software = load_content('software.json');
+$page_title = t('software.title');
 require dirname(__DIR__) . '/includes/header.php';
 ?>
 
 <div class="container page-hero">
-    <h1>Dasturlar</h1>
-    <p>AutoCAD, Revit, SketchUp, Blender va boshqa vositalar.</p>
+    <h1><?= e(t('software.h1')) ?></h1>
+    <p><?= e(t('software.lead')) ?></p>
 </div>
 
 <div class="container soft-grid">
@@ -21,7 +21,7 @@ require dirname(__DIR__) . '/includes/header.php';
                     <span class="tag"><?= e($use) ?></span>
                 <?php endforeach; ?>
             </div>
-            <p style="margin:0;font-size:0.9rem;color:var(--muted)">Daraja: <?= e($app['level']) ?></p>
+            <p style="margin:0;font-size:0.9rem;color:var(--muted)"><?= e(t('software.level')) ?>: <?= e($app['level']) ?></p>
             <?php if (!empty($app['resources'])): ?>
                 <ul class="resource-list">
                     <?php foreach ($app['resources'] as $res): ?>

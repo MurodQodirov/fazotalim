@@ -22,23 +22,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($found && password_verify($password, $found['password'])) {
         $_SESSION['user_id'] = $found['id'];
-        flash('success', 'Xush kelibsiz, ' . $found['name'] . '!');
+        flash('success', t('login.welcome', ['name' => $found['name']]));
         if (($found['role'] ?? '') === 'admin') {
             redirect(base_url('admin/index.php'));
         }
         redirect(base_url('index.php'));
     }
 
-    $error = 'Email yoki parol noto‘g‘ri.';
+    $error = t('login.error');
 }
 
-$page_title = "Kirish";
+$page_title = t('login.title');
 require dirname(__DIR__) . '/includes/header.php';
 ?>
 
 <div class="auth-wrap">
     <div class="auth-card">
-        <h1>Tizimga kirish</h1>
+        <h1><?= e(t('login.h1')) ?></h1>
 
         <?php if ($error): ?>
             <div class="flash flash-error" style="border-radius:10px;margin-bottom:1rem;padding:0.75rem"><?= e($error) ?></div>
@@ -50,14 +50,14 @@ require dirname(__DIR__) . '/includes/header.php';
                 <input type="email" id="email" name="email" required value="<?= e($_POST['email'] ?? '') ?>">
             </div>
             <div class="form-group">
-                <label for="password">Parol</label>
+                <label for="password"><?= e(t('login.password')) ?></label>
                 <input type="password" id="password" name="password" required>
             </div>
-            <button type="submit" class="btn btn-primary" style="width:100%">Kirish</button>
+            <button type="submit" class="btn btn-primary" style="width:100%"><?= e(t('login.submit')) ?></button>
         </form>
 
         <p style="margin-top:1rem;text-align:center;color:var(--muted)">
-            Akkount yo‘qmi? <a href="<?= base_url('pages/register.php') ?>">Ro‘yxatdan o‘tish</a>
+            <?= e(t('login.noaccount')) ?> <a href="<?= base_url('pages/register.php') ?>"><?= e(t('login.register')) ?></a>
         </p>
     </div>
 </div>

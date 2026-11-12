@@ -5,13 +5,13 @@ $id = $_GET['id'] ?? '';
 $video = find_by_id($videos, $id);
 
 if (!$video) {
-    flash('error', 'Video topilmadi.');
+    flash('error', t('video.notfound'));
     redirect(base_url('pages/videos.php'));
 }
 
 $yt = $video['youtube_id'] ?? youtube_id($video['url'] ?? '');
 if (!$yt) {
-    flash('error', 'YouTube havolasi noto‘g‘ri.');
+    flash('error', t('video.badyoutube'));
     redirect(base_url('pages/videos.php'));
 }
 
@@ -35,7 +35,7 @@ require dirname(__DIR__) . '/includes/header.php';
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
     </div>
     <p style="margin-top:1rem">
-        <a class="btn btn-ghost" href="<?= base_url('pages/videos.php') ?>">Barcha darsliklar</a>
+        <a class="btn btn-ghost" href="<?= base_url('pages/videos.php') ?>"><?= e(t('videos.all')) ?></a>
     </p>
 </div>
 

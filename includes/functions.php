@@ -13,6 +13,86 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+function current_lang(): string
+{
+    static $lang = null;
+    if ($lang !== null) {
+        return $lang;
+    }
+    $allowed = ['uz', 'ru'];
+    if (!empty($_SESSION['lang']) && in_array($_SESSION['lang'], $allowed, true)) {
+        return $lang = $_SESSION['lang'];
+    }
+    if (!empty($_COOKIE['lang']) && in_array($_COOKIE['lang'], $allowed, true)) {
+        $_SESSION['lang'] = $_COOKIE['lang'];
+        return $lang = $_COOKIE['lang'];
+    }
+    return $lang = 'uz';
+}
+
+function set_lang(string $lang): void
+{
+    $lang = in_array($lang, ['uz', 'ru'], true) ? $lang : 'uz';
+    $_SESSION['lang'] = $lang;
+    setcookie('lang', $lang, [
+        'expires' => time() + 365 * 86400,
+        'path' => '/',
+        'samesite' => 'Lax',
+    ]);
+}
+
+function t(string $key, array $replace = []): string
+{
+    static $dicts = [];
+    $lang = current_lang();
+    if (!isset($dicts['uz'])) {
+        $dicts['uz'] = load_json('i18n/uz.json');
+    }
+    if (!isset($dicts[$lang])) {
+        $dicts[$lang] = load_json('i18n/' . $lang . '.json');
+    }
+    $text = $dicts[$lang][$key] ?? $dicts['uz'][$key] ?? $key;
+    foreach ($replace as $k => $v) {
+        $text = str_replace('{' . $k . '}', (string) $v, $text);
+    }
+    return $text;
+}
+
+function loc(array $item, string $key, mixed $default = ''): mixed
+{
+    if (current_lang() === 'ru') {
+        $ru = $item[$key . '_ru'] ?? null;
+        if ($ru !== null && $ru !== '') {
+            return $ru;
+        }
+    }
+    return $item[$key] ?? $default;
+}
+
+function load_content(string $file): array
+{
+    if (current_lang() === 'ru') {
+        $ru = load_json(preg_replace('/\.json$/', '.ru.json', $file));
+        if ($ru) {
+            return $ru;
+        }
+    }
+    return load_json($file);
+}
+
+function lang_url(string $lang): string
+{
+    $next = $_SERVER['REQUEST_URI'] ?? '/';
+    return base_url('pages/lang.php?lang=' . urlencode($lang) . '&next=' . urlencode($next));
+}
+
+function supervisor_name(): string
+{
+    return current_lang() === 'ru'
+        ? 'PhD, доцент Ташимов Нурлан Ерполатович'
+        : SITE_SUPERVISOR;
+}
+
 function load_json(string $file): array
 {
     $path = DATA_PATH . '/' . $file;
@@ -213,22 +293,33 @@ function ensure_dir(string $path): void
 
 function course_sections(): array
 {
-    return [
-        ['id' => 'tasvirlash', 'n' => '01', 'title' => 'Tasvirlash usullari', 'file' => 'pages/course.php?id=tasvirlash', 'lead' => 'Ortogonal, aksonometrik va perspektiv tasvirlash.'],
-        ['id' => 'nuqta', 'n' => '02', 'title' => 'Nuqtaning ortogonal proyeksiyasi', 'file' => 'pages/course.php?id=nuqta', 'lead' => 'Nuqtaning H, V va W tekisliklaridagi tasviri.'],
-        ['id' => 'chiziq', 'n' => '03', 'title' => 'To‘g‘ri chiziqning ortogonal proyeksiyasi', 'file' => 'pages/course.php?id=chiziq', 'lead' => 'Umumiy va xususiy holatdagi to‘g‘ri chiziq.'],
-        ['id' => 'tekislik', 'n' => '04', 'title' => 'Tekislikning ortogonal proyeksiyasi', 'file' => 'pages/course.php?id=tekislik', 'lead' => 'Tekislik izlari, xususiy holatlar va nuqta tegishliligi.'],
-        ['id' => 'epyur', 'n' => '05', 'title' => 'Epyurning qayta tuzilish usullari', 'file' => 'pages/course.php?id=epyur', 'lead' => 'Tekislik almashtirish, aylantirish va yoyish.'],
-        ['id' => 'egri', 'n' => '06', 'title' => 'Egri chiziqlar', 'file' => 'pages/course.php?id=egri', 'lead' => 'Tekis va fazoviy egri chiziqlar, vint chizig‘i.'],
-        ['id' => 'sirtlar', 'n' => '07', 'title' => 'Sirtlar', 'file' => 'pages/solids.php', 'lead' => 'Ko‘pyoqliklar va aylanma sirtlarning 3D modellari.'],
-        ['id' => 'videodarslar', 'n' => '08', 'title' => 'Videodarslar', 'file' => 'pages/videos.php', 'lead' => 'Bo‘limlar bo‘yicha video materiallar.'],
-        ['id' => 'testlar', 'n' => '09', 'title' => 'Testlar', 'file' => 'pages/tests.php', 'lead' => 'Diagnostika va mavzuli testlar.'],
-        ['id' => 'animatsiyalar', 'n' => '10', 'title' => 'Animatsiyalar', 'file' => 'pages/animatsiyalar.php', 'lead' => '3D laboratoriya va harakatdagi proyeksiyalar.'],
-        ['id' => 'prezentatsiyalar', 'n' => '11', 'title' => 'Prezentatsiyalar', 'file' => 'pages/prezentatsiyalar.php', 'lead' => 'Mavzular bo‘yicha slayd materiallari.'],
-        ['id' => 'maruza', 'n' => '12', 'title' => 'Ma’ruza matnlari', 'file' => 'pages/maruza.php', 'lead' => 'Nazariy matnlar, formulalar va misollar.'],
-        ['id' => 'metrik', 'n' => '13', 'title' => 'Metrik va pozitsion masalalar', 'file' => 'pages/practice.php', 'lead' => 'Masofa, haqiqiy uzunlik, tegishlilik va kesishish.'],
-        ['id' => 'loyihalash', 'n' => '14', 'title' => 'Arxitekturada loyihalash', 'file' => 'pages/architecture.php', 'lead' => 'Reja, fasad va yon ko‘rinish.'],
+    $ids = [
+        ['tasvirlash', '01', 'pages/course.php?id=tasvirlash'],
+        ['nuqta', '02', 'pages/course.php?id=nuqta'],
+        ['chiziq', '03', 'pages/course.php?id=chiziq'],
+        ['tekislik', '04', 'pages/course.php?id=tekislik'],
+        ['epyur', '05', 'pages/course.php?id=epyur'],
+        ['egri', '06', 'pages/course.php?id=egri'],
+        ['sirtlar', '07', 'pages/solids.php'],
+        ['videodarslar', '08', 'pages/videos.php'],
+        ['testlar', '09', 'pages/tests.php'],
+        ['animatsiyalar', '10', 'pages/animatsiyalar.php'],
+        ['prezentatsiyalar', '11', 'pages/prezentatsiyalar.php'],
+        ['maruza', '12', 'pages/maruza.php'],
+        ['metrik', '13', 'pages/practice.php'],
+        ['loyihalash', '14', 'pages/architecture.php'],
     ];
+    $out = [];
+    foreach ($ids as [$id, $n, $file]) {
+        $out[] = [
+            'id' => $id,
+            'n' => $n,
+            'title' => t('sec.' . $id),
+            'file' => $file,
+            'lead' => t('sec.' . $id . '.lead'),
+        ];
+    }
+    return $out;
 }
 
 function course_section(string $id): ?array
@@ -251,7 +342,7 @@ function course_labels(): array
     $labels['projections'] = $labels['tasvirlash'];
     $labels['practice'] = $labels['metrik'];
     $labels['design'] = $labels['loyihalash'];
-    $labels['other'] = 'Umumiy';
+    $labels['other'] = t('other');
     return $labels;
 }
 

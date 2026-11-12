@@ -68,8 +68,13 @@
         );
         camera.position.set(3.2, 2.4, 4.2);
 
-        const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+        const renderer = new THREE.WebGLRenderer({
+            canvas,
+            antialias: false,
+            alpha: true,
+            powerPreference: 'low-power',
+        });
+        renderer.setPixelRatio(1);
         renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
 
         const hemi = new THREE.HemisphereLight(0xffffff, 0x1e4d8c, 0.95);
@@ -95,7 +100,8 @@
         return { scene, camera, renderer, grid, axes };
     }
 
-    function enableOrbit(canvas, camera, target = { x: 0, y: 0, z: 0 }) {
+    function enableOrbit(canvas, camera, target = { x: 0, y: 0, z: 0 }, onChange) {
+        const notify = typeof onChange === 'function' ? onChange : null;
         let dragging = false;
         let prev = { x: 0, y: 0 };
         let spherical = {
@@ -110,6 +116,7 @@
             camera.position.y = target.y + spherical.radius * Math.cos(spherical.phi);
             camera.position.z = target.z + spherical.radius * sinPhi * Math.cos(spherical.theta);
             camera.lookAt(target.x, target.y, target.z);
+            if (notify) notify();
         }
 
         canvas.addEventListener('pointerdown', (e) => {

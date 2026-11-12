@@ -21,12 +21,12 @@ if ($user) {
     }
 }
 
-$page_title = "Natijalar";
+$page_title = t('results.title');
 require dirname(__DIR__) . '/includes/header.php';
 ?>
 
 <div class="container page-hero">
-    <h1>Natijalar</h1>
+    <h1><?= e(t('results.title')) ?></h1>
 </div>
 
 <div class="container" style="padding-bottom:3rem">
@@ -34,11 +34,11 @@ require dirname(__DIR__) . '/includes/header.php';
         <div class="result-summary">
             <div class="result-tile">
                 <strong><?= $pre ? e((string)$pre['score']) . '%' : '—' ?></strong>
-                <span>Boshlang‘ich test</span>
+                <span><?= e(t('results.pre')) ?></span>
             </div>
             <div class="result-tile">
                 <strong><?= $post ? e((string)$post['score']) . '%' : '—' ?></strong>
-                <span>Yakuniy test</span>
+                <span><?= e(t('results.post')) ?></span>
             </div>
             <div class="result-tile">
                 <strong>
@@ -48,30 +48,30 @@ require dirname(__DIR__) . '/includes/header.php';
                         —
                     <?php endif; ?>
                 </strong>
-                <span>O‘sish</span>
+                <span><?= e(t('results.growth')) ?></span>
             </div>
             <div class="result-tile">
                 <strong><?= count($results) ?></strong>
-                <span>Jami urinish</span>
+                <span><?= e(t('results.total')) ?></span>
             </div>
         </div>
     <?php endif; ?>
 
     <?php if (empty($results)): ?>
         <div class="empty-state">
-            <p>Hali natijalar yo‘q.</p>
-            <a class="btn btn-primary" href="<?= base_url('pages/tests.php') ?>">Testni boshlash</a>
+            <p><?= e(t('results.empty')) ?></p>
+            <a class="btn btn-primary" href="<?= base_url('pages/tests.php') ?>"><?= e(t('tests.start')) ?></a>
         </div>
     <?php else: ?>
         <div class="table-wrap">
             <table>
                 <thead>
                     <tr>
-                        <th>Sana</th>
-                        <th>Foydalanuvchi</th>
-                        <th>Test</th>
-                        <th>To‘g‘ri</th>
-                        <th>Ball</th>
+                        <th><?= e(t('th.date')) ?></th>
+                        <th><?= e(t('th.user')) ?></th>
+                        <th><?= e(t('th.test')) ?></th>
+                        <th><?= e(t('th.ok')) ?></th>
+                        <th><?= e(t('th.score')) ?></th>
                         <th></th>
                     </tr>
                 </thead>
@@ -83,7 +83,7 @@ require dirname(__DIR__) . '/includes/header.php';
                             <td><?= e($r['test_title'] ?? '') ?></td>
                             <td><?= (int)($r['correct'] ?? 0) ?>/<?= (int)($r['total'] ?? 0) ?></td>
                             <td><strong><?= e((string)($r['score'] ?? 0)) ?>%</strong></td>
-                            <td><a href="<?= base_url('pages/test-result.php?id=' . urlencode($r['id'])) ?>">Batafsil</a></td>
+                            <td><a href="<?= base_url('pages/test-result.php?id=' . urlencode($r['id'])) ?>"><?= e(t('th.detail')) ?></a></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

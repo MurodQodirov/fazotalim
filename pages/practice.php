@@ -1,14 +1,14 @@
 <?php
 require_once dirname(__DIR__) . '/includes/functions.php';
-$topics = load_json('topics.json');
+$topics = load_content('topics.json');
 usort($topics, fn($a, $b) => ($a['order'] ?? 0) <=> ($b['order'] ?? 0));
-$page_title = "Metrik va pozitsion masalalar";
+$page_title = t('sec.metrik');
 require dirname(__DIR__) . '/includes/header.php';
 ?>
 
 <div class="container page-hero">
-    <h1>Metrik va pozitsion masalalar</h1>
-    <p>Masofa, haqiqiy uzunlik, tegishlilik, kesishish va kesimlar.</p>
+    <h1><?= e(t('sec.metrik')) ?></h1>
+    <p><?= e(t('practice.lead')) ?></p>
 </div>
 
 <div class="container" style="padding-bottom:3rem">

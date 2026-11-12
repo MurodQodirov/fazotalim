@@ -9,8 +9,8 @@
     const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
     camera.position.set(8, 6, 10);
 
-    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: false, powerPreference: 'low-power' });
+    renderer.setPixelRatio(1);
 
     scene.add(new THREE.HemisphereLight(0xffffff, 0x1e4d8c, 0.95));
     const sun = new THREE.DirectionalLight(0xffffff, 0.8);
@@ -91,6 +91,7 @@
         camera.position.y = target.y + spherical.radius * Math.cos(spherical.phi);
         camera.position.z = target.z + spherical.radius * Math.sin(spherical.phi) * Math.cos(spherical.theta);
         camera.lookAt(target);
+        renderer.render(scene, camera);
     }
     updateCam();
 
@@ -132,13 +133,8 @@
         camera.aspect = w / Math.max(h, 1);
         camera.updateProjectionMatrix();
         renderer.setSize(w, h, false);
+        renderer.render(scene, camera);
     }
     window.addEventListener('resize', resize);
     resize();
-
-    function animate() {
-        requestAnimationFrame(animate);
-        renderer.render(scene, camera);
-    }
-    animate();
 })();

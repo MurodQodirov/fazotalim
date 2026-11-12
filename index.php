@@ -1,5 +1,6 @@
 <?php
-$page_title = "Bosh sahifa";
+require_once __DIR__ . '/includes/functions.php';
+$page_title = t('nav.home');
 $body_class = "is-home";
 $extra_js = [
     'three.min.js',
@@ -14,11 +15,11 @@ require __DIR__ . '/includes/header.php';
         <div class="sheet">
             <div class="hero-grid">
                 <div class="hero-copy">
-                    <p class="eyebrow">Muallif: <?= e(SITE_AUTHOR) ?></p>
-                    <p class="eyebrow eyebrow-sub">Ilmiy rahbar: <?= e(SITE_SUPERVISOR) ?></p>
-                    <h1>Fazoviy tasavvurni rivojlantirish</h1>
+                    <p class="eyebrow"><?= e(t('author')) ?>: <?= e(SITE_AUTHOR) ?></p>
+                    <p class="eyebrow eyebrow-sub"><?= e(t('supervisor')) ?>: <?= e(supervisor_name()) ?></p>
+                    <h1><?= e(t('hero.title')) ?></h1>
                     <p class="hero-lead">
-                        Kub, konus, piramida — shaklni aylaning, H·V·W tekislikdagi izini ko‘ring.
+                        <?= e(t('hero.lead')) ?>
                     </p>
                     <div class="axis-chip" aria-hidden="true">
                         <svg viewBox="0 0 88 88" width="54" height="54">
@@ -32,11 +33,11 @@ require __DIR__ . '/includes/header.php';
                             <text x="8" y="12" font-size="10">Z</text>
                             <text x="54" y="38" font-size="10" fill="#d4a017">Y</text>
                         </svg>
-                        <span>X · Y · Z o‘qlar</span>
+                        <span><?= e(t('hero.axes')) ?></span>
                     </div>
                     <div class="hero-actions">
-                        <a class="btn btn-primary" href="<?= base_url('pages/lab.php') ?>">3D laboratoriya</a>
-                        <a class="btn btn-ghost" href="<?= base_url('pages/solids.php') ?>">Shakllar</a>
+                        <a class="btn btn-primary" href="<?= base_url('pages/lab.php') ?>"><?= e(t('hero.lab')) ?></a>
+                        <a class="btn btn-ghost" href="<?= base_url('pages/solids.php') ?>"><?= e(t('nav.shapes')) ?></a>
                     </div>
                 </div>
                 <div class="hero-visual">
@@ -49,20 +50,20 @@ require __DIR__ . '/includes/header.php';
                                 <path d="M40 50 L100 80 L160 50" stroke-dasharray="3 4"/>
                             </g>
                         </svg>
-                        <canvas id="heroCanvas" aria-label="Aylanayotgan 3D shakl"></canvas>
-                        <div class="shape-tag" id="heroShapeTag">Kub</div>
+                        <canvas id="heroCanvas" aria-label="<?= e(t('hero.canvas')) ?>"></canvas>
+                        <div class="shape-tag" id="heroShapeTag"><?= e(t('shape.cube')) ?></div>
                     </div>
                     <div class="hero-views">
                         <div class="hero-proj">
-                            <span>V · Old</span>
+                            <span><?= e(t('view.front')) ?></span>
                             <svg id="heroFront" viewBox="0 0 120 90"></svg>
                         </div>
                         <div class="hero-proj">
-                            <span>H · Yuqori</span>
+                            <span><?= e(t('view.top')) ?></span>
                             <svg id="heroTop" viewBox="0 0 120 90"></svg>
                         </div>
                         <div class="hero-proj">
-                            <span>W · Yon</span>
+                            <span><?= e(t('view.side')) ?></span>
                             <svg id="heroSide" viewBox="0 0 120 90"></svg>
                         </div>
                     </div>
@@ -74,31 +75,31 @@ require __DIR__ . '/includes/header.php';
 
 <section class="shape-ribbon">
     <div class="container shape-ribbon-inner">
-        <p>Fazodagi asosiy jismlar</p>
+        <p><?= e(t('ribbon.title')) ?></p>
         <div class="shape-orbit">
             <a href="<?= base_url('pages/solids.php') ?>" class="orbit-item">
                 <svg viewBox="0 0 64 64"><path d="M16 26 L32 16 L48 26 V42 L32 52 L16 42 Z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 26 L32 36 L48 26 M32 36 V52" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
-                <span>Kub</span>
+                <span><?= e(t('shape.cube')) ?></span>
             </a>
             <a href="<?= base_url('pages/solids.php') ?>" class="orbit-item">
                 <svg viewBox="0 0 64 64"><path d="M12 48 L32 12 L52 48 Z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M32 12 V48" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 3"/></svg>
-                <span>Piramida</span>
+                <span><?= e(t('shape.pyramid')) ?></span>
             </a>
             <a href="<?= base_url('pages/solids.php') ?>" class="orbit-item">
                 <svg viewBox="0 0 64 64"><ellipse cx="32" cy="46" rx="16" ry="6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 46 L32 12 L48 46" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
-                <span>Konus</span>
+                <span><?= e(t('shape.cone')) ?></span>
             </a>
             <a href="<?= base_url('pages/solids.php') ?>" class="orbit-item">
                 <svg viewBox="0 0 64 64"><ellipse cx="32" cy="16" rx="14" ry="6" fill="none" stroke="currentColor" stroke-width="1.6"/><ellipse cx="32" cy="48" rx="14" ry="6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M18 16 V48 M46 16 V48" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
-                <span>Silindr</span>
+                <span><?= e(t('shape.cylinder')) ?></span>
             </a>
             <a href="<?= base_url('pages/solids.php') ?>" class="orbit-item">
                 <svg viewBox="0 0 64 64"><ellipse cx="32" cy="32" rx="18" ry="18" fill="none" stroke="currentColor" stroke-width="1.6"/><ellipse cx="32" cy="32" rx="18" ry="7" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M32 14 V50" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 3"/></svg>
-                <span>Sfera</span>
+                <span><?= e(t('shape.sphere')) ?></span>
             </a>
             <a href="<?= base_url('pages/solids.php') ?>" class="orbit-item">
                 <svg viewBox="0 0 64 64"><path d="M18 44 L32 16 L46 44" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M18 44 H46" stroke="currentColor" stroke-width="1.6"/><path d="M22 44 V36 H42 V44" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
-                <span>Prizma</span>
+                <span><?= e(t('shape.prism')) ?></span>
             </a>
         </div>
     </div>
@@ -108,8 +109,8 @@ require __DIR__ . '/includes/header.php';
     <div class="container">
         <div class="section-head">
             <div>
-                <p class="kicker">14 ta mavzu · chizma geometriya</p>
-                <h2>Bo‘limlar</h2>
+                <p class="kicker"><?= e(t('kicker')) ?></p>
+                <h2><?= e(t('home.sections')) ?></h2>
             </div>
         </div>
         <div class="card-grid">

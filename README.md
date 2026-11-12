@@ -2,7 +2,8 @@
 
 Chizma geometriya bo‘yicha interaktiv o‘quv platforma.
 
-**Muallif:** Gulbahor Xojibayeva
+**Muallif:** Gulbahor Xojibayeva  
+**Ilmiy rahbar:** PhD, dotsent Tashimov Nurlan Erpolatovich
 
 ```bash
 php -S localhost:8080

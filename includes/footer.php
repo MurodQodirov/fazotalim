@@ -6,6 +6,7 @@
                 <strong>FazoTa'lim</strong>
                 <p>Chizma geometriya bo‘yicha interaktiv o‘quv platforma.</p>
                 <p class="footer-author">Muallif: <?= e(SITE_AUTHOR) ?></p>
+                <p class="footer-author">Ilmiy rahbar: <?= e(SITE_SUPERVISOR) ?></p>
             </div>
             <?php
             $footerSections = course_sections();
@@ -31,7 +32,7 @@
             </div>
         </div>
         <div class="container footer-bottom">
-            <span>© <?= date('Y') ?> FazoTa'lim · <?= e(SITE_AUTHOR) ?></span>
+            <span>© <?= date('Y') ?> FazoTa'lim · <?= e(SITE_AUTHOR) ?> · <?= e(SITE_SUPERVISOR) ?></span>
         </div>
     </footer>
 

@@ -335,15 +335,16 @@ body {
 }
 
 .eyebrow {
-    display: inline-block;
+    display: block;
     font-family: var(--mono);
     font-size: 0.72rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--blueprint);
-    margin-bottom: 0.75rem;
+    margin: 0 0 0.35rem;
     font-weight: 600;
 }
+.eyebrow-sub { margin-bottom: 0.75rem; }
 
 .hero h1 {
     font-family: var(--display);

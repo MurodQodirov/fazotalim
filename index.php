@@ -14,6 +14,7 @@ require __DIR__ . '/includes/header.php';
             <div class="hero-grid">
                 <div class="hero-copy">
                     <p class="eyebrow">Muallif: <?= e(SITE_AUTHOR) ?></p>
+                    <p class="eyebrow eyebrow-sub">Ilmiy rahbar: <?= e(SITE_SUPERVISOR) ?></p>
                     <h1>Fazoviy tasavvurni rivojlantirish</h1>
                     <p class="hero-lead">
                         Geometrik shakllarni 3D model va 2D chizma orqali o‘rganing.

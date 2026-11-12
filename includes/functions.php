@@ -7,6 +7,7 @@ define('ROOT_PATH', dirname(__DIR__));
 define('DATA_PATH', ROOT_PATH . '/data');
 define('UPLOAD_PATH', ROOT_PATH . '/uploads');
 define('SITE_AUTHOR', 'Gulbahor Xojibayeva');
+define('SITE_SUPERVISOR', 'PhD, dotsent Tashimov Nurlan Erpolatovich');
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();

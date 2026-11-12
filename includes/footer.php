@@ -42,7 +42,7 @@
             <?php if (str_starts_with($js, 'http')): ?>
                 <script src="<?= e($js) ?>"></script>
             <?php else: ?>
-                <script src="<?= asset('js/' . $js) ?>?v=7"></script>
+                <script src="<?= asset('js/' . $js) ?>?v=8"></script>
             <?php endif; ?>
         <?php endforeach; ?>
     <?php endif; ?>

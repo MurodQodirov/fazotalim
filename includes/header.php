@@ -14,7 +14,7 @@ $current = basename($_SERVER['PHP_SELF'] ?? '');
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="<?= asset('css/style.css') ?>?v=11">
+    <link rel="stylesheet" href="<?= asset('css/style.css') ?>?v=12">
     <?php if (!empty($extra_css)): ?>
         <?php foreach ((array)$extra_css as $css): ?>
             <link rel="stylesheet" href="<?= asset('css/' . $css) ?>">
@@ -29,6 +29,14 @@ $current = basename($_SERVER['PHP_SELF'] ?? '');
 </head>
 <body class="<?= e($body_class ?? '') ?>">
     <div class="bg-grid" aria-hidden="true"></div>
+    <div class="geo-field" aria-hidden="true">
+        <svg class="geo-solid s1" viewBox="0 0 80 80"><path d="M14 30 L40 14 L66 30 V52 L40 68 L14 52 Z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M14 30 L40 46 L66 30 M40 46 V68" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+        <svg class="geo-solid s2 gold" viewBox="0 0 80 80"><path d="M16 58 L40 14 L64 58 Z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M40 14 V58" stroke="currentColor" stroke-width="1.1" stroke-dasharray="3 3"/></svg>
+        <svg class="geo-solid s3" viewBox="0 0 80 80"><ellipse cx="40" cy="58" rx="20" ry="8" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M20 58 L40 12 L60 58" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+        <svg class="geo-solid s4 gold" viewBox="0 0 80 80"><ellipse cx="40" cy="40" rx="22" ry="22" fill="none" stroke="currentColor" stroke-width="1.3"/><ellipse cx="40" cy="40" rx="22" ry="8" fill="none" stroke="currentColor" stroke-width="1"/><path d="M40 18 V62" stroke-dasharray="2 3" stroke="currentColor"/></svg>
+        <svg class="geo-solid s5" viewBox="0 0 80 80"><path d="M12 42 H68 M22 42 V22 H44 M22 42 V62 H44" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="44" cy="22" r="2.2" fill="currentColor"/><circle cx="44" cy="62" r="2.2" fill="currentColor"/></svg>
+        <svg class="geo-solid s6 gold" viewBox="0 0 80 80"><path d="M14 54 C22 18, 34 62, 42 30 S58 18, 66 48" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+    </div>
     <header class="site-header">
         <div class="container header-inner">
             <a href="<?= base_url('index.php') ?>" class="logo">

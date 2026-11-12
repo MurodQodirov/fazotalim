@@ -3,7 +3,7 @@ require_once dirname(__DIR__) . '/includes/functions.php';
 $solids = load_json('solids.json');
 $page_title = "Sirtlar";
 $extra_js = [
-    'https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js',
+    'three.min.js',
     'geometry.js',
     'solids-preview.js',
 ];

@@ -5,7 +5,7 @@ $selected = $_GET['solid'] ?? ($solids[0]['id'] ?? 'cube');
 $page_title = "3D laboratoriya";
 $body_class = "lab-page";
 $extra_js = [
-    'https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js',
+    'three.min.js',
     'geometry.js',
     'lab.js',
 ];

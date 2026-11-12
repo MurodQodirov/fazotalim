@@ -278,3 +278,24 @@ function current_section_id(): string
     ];
     return $map[$page] ?? '';
 }
+
+function section_glyph(string $id): string
+{
+    $icons = [
+        'tasvirlash' => '<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M7 26 L20 20 L33 26 L20 32 Z"/><path d="M7 26 V14 L20 8 V20"/><path d="M33 26 V14 L20 8"/></svg>',
+        'nuqta' => '<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="20" cy="20" r="2.6" fill="currentColor" stroke="none"/><path d="M6 20h28M20 6v28" stroke-dasharray="2 2.2"/><path d="M10 12l20 16"/></svg>',
+        'chiziq' => '<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 30 L32 10"/><circle cx="8" cy="30" r="2" fill="currentColor" stroke="none"/><circle cx="32" cy="10" r="2" fill="currentColor" stroke="none"/><path d="M8 30 L8 18 L32 10" opacity=".45"/></svg>',
+        'tekislik' => '<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M8 28 L18 10 L34 18 L24 32 Z" fill="currentColor" fill-opacity=".12"/><path d="M8 28 L18 10 L34 18 L24 32 Z"/></svg>',
+        'epyur' => '<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 22 H34"/><path d="M10 22 V10 H22"/><path d="M10 22 V34 H22"/><circle cx="22" cy="10" r="1.6" fill="currentColor" stroke="none"/><circle cx="22" cy="34" r="1.6" fill="currentColor" stroke="none"/><path d="M22 10v12" stroke-dasharray="1.6 2"/></svg>',
+        'egri' => '<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 28 C12 8, 18 32, 22 16 S30 8, 33 22"/><circle cx="8" cy="28" r="1.6" fill="currentColor" stroke="none"/></svg>',
+        'sirtlar' => '<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M10 16 L20 10 L30 16 V28 L20 34 L10 28 Z"/><path d="M10 16 L20 22 L30 16M20 22 V34"/></svg>',
+        'videodarslar' => '<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="11" width="26" height="18" rx="2"/><path d="M17 16 L26 20 L17 24 Z" fill="currentColor" stroke="none"/></svg>',
+        'testlar' => '<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 7 L33 20 L20 33 L7 20 Z"/><path d="M14 20 l4 4 8-9"/></svg>',
+        'animatsiyalar' => '<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M20 8 a12 12 0 1 1-8.5 3.5"/><path d="M20 8 l-3 6 7-1"/></svg>',
+        'prezentatsiyalar' => '<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="8" y="10" width="20" height="14"/><rect x="12" y="14" width="20" height="14"/><path d="M20 28 v4 M16 32h8"/></svg>',
+        'maruza' => '<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 30 V10 h9 v20"/><path d="M19 10 h11 v20 H19"/><path d="M23 16h5M23 20h5"/></svg>',
+        'metrik' => '<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 28 L28 10"/><path d="M10 22 L8 28 L14 26"/><path d="M22 12 L28 10 L26 16"/><path d="M12 12 h16" stroke-dasharray="2 2"/></svg>',
+        'loyihalash' => '<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M8 26 V16 L20 8 L32 16 V26 H8Z"/><rect x="17" y="20" width="6" height="6"/><path d="M8 26 H32"/></svg>',
+    ];
+    return $icons[$id] ?? $icons['sirtlar'];
+}

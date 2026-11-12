@@ -14,7 +14,7 @@ $page_title = $topic['title'];
 $extra_js = [];
 if (!empty($topic['solid_id'])) {
     $extra_js = [
-        'https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js',
+        'three.min.js',
         'geometry.js',
         'solids-preview.js',
     ];
